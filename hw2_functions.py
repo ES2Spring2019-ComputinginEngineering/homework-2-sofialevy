@@ -4,9 +4,9 @@
 # FILL THESE COMMENTS IN
 #*****************************************
 # YOUR NAME: Sofia Levy
-# NUMBER OF HOURS TO COMPLETE: 2 hours (please track how long this homework takes you to complete).
+# NUMBER OF HOURS TO COMPLETE: 4 hours (please track how long this homework takes you to complete).
 # YOUR COLLABORATION STATEMENT(s) (refer to syllabus):
-# Zosia Stafford, Rene Jameson
+# I worked with Rene Jameson on this assignment. I received assistance from Zosia Stafford and Dr. Cross on this assignment.
 #*****************************************
 
 #In this homework,the ultimate goal is to create a function called areaofatriangle,
@@ -22,11 +22,9 @@
 
 import math #This line allows you to use math functions. Importantly, math.sqrt(#) which will produce the square root of the number inside the parentheses.
 
-
 def intersectionoftwolines_x(m1, b1, m2, b2):
     # Calculate x for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
-
 
     x = (b2-b1)/(m1-m2) #replace this with your calculation for x
     return x
@@ -35,15 +33,12 @@ def intersectionoftwolines_y(m1, b1, m2, b2):
     # Calculate y for the point where two equations:
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
-
     y = (((b2-b1)/(m1-m2))*m1)+b1 #replace this with your calculation for y
     return y
-
 
 def distancebetweenpoints(x1, y1, x2, y2):
     # Calculate the linear distance between two points
     # (x1, y1) and (x2, y2).
-
 
     distance = math.sqrt(((x2-x1)**2)+((y2-y1)**2)) # replace with your calculation for distance
     return distance
@@ -51,7 +46,8 @@ def distancebetweenpoints(x1, y1, x2, y2):
 def heronsformula(a, b, c):
     # Calculate the area of a triangle with three known side lengths.
     # You may want to look up Heron's formula online.
-    s = (a+b+c)/2 # calculates the side, 's,' that is needed to use Heron's formula
+
+    s = (a+b+c)/2 #calculates variable 's' that is needed to use Heron's formula
 
     area = math.sqrt(s*(s-a)*(s-b)*(s-c)) #replace this with your calculation for area
     return area
@@ -61,8 +57,8 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     #triangle when the three sides are described by three linear equations
     #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
 
-    if m1 == m2 or m2 == m3 or m1 == m3:
-        print("Error: No Intersection - Lines are parallel")
+    if (m1 == m2) or (m2 == m3) or (m1 == m3):
+        print("Error: No intersection - Lines are parallel")
         return None
 
     else:
@@ -78,8 +74,8 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
         length_2 = distancebetweenpoints(intersection_x2, intersection_y2, intersection_x3, intersection_y3)
         length_3 = distancebetweenpoints(intersection_x1, intersection_y1, intersection_x3, intersection_y3)
 
-        if (length_1 == 0) or (length_2 == 0) or (length_3 == 0):
-            print("Error: No Triangle - All three lines intersect at the same point")
+        if (length_1 == 0) or (length_2) == 0 or (length_3) == 0:
+            print("Error: No triangle - All three lines intersect at the same point")
             return None
 
         else:
@@ -115,7 +111,7 @@ print(round(areaofatriangle(10, 10, 20, 0, 30, 0),2) == 2.5)
 print(round(areaofatriangle(0, 0, 1, 0, -1, 10),2) == 25)
 print("*********")
 
-print("No Triangle: Intersection at same point")
+print("No triangle: Intersection at same point")
 #If these are both true, it is likely the program can correctly evauluate when there is no triangle formed
 print(areaofatriangle(3, 4, 5, 4, 7, 4))
 print(areaofatriangle(1, 2, 4, 2, 7, 2))
